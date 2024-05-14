@@ -10,7 +10,7 @@ import java.time.LocalTime;
 public class DealershipFileManager {
 
 
-    public static Dealership getDealership() throws IOException {
+    public Dealership getDealership() throws IOException {
         Dealership dealership = null;
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("inventory.csv"));
@@ -48,6 +48,6 @@ public class DealershipFileManager {
             System.out.println("File not found. Creating a new file");
             throw new RuntimeException(e);
         }
-        return null;
+        return dealership;
     }
 }

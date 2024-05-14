@@ -44,6 +44,7 @@ public class Dealership {
     }
 
     public void addVehicle(Vehicle vehicle) {
+       inventory.add(vehicle);
 
     }
     public void removeVehicle(){
