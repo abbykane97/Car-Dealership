@@ -9,6 +9,8 @@ import java.time.LocalTime;
 
 public class DealershipFileManager {
 
+    public DealershipFileManager() throws IOException {
+    }
 
     public Dealership getDealership() throws IOException {
         Dealership dealership = null;
@@ -49,5 +51,6 @@ public class DealershipFileManager {
             throw new RuntimeException(e);
         }
         return dealership;
+
     }
 }
