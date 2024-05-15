@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="4f35084a-0668-4e36-8d67-031f2c9788db" name="Changes" comment="I created the display method in phase 3">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/DealershipFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/DealershipFileManager.java" afterDir="false" />
+=======
+    <list default="true" id="4f35084a-0668-4e36-8d67-031f2c9788db" name="Changes" comment="second phase complete">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> refs/remotes/origin/main
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
