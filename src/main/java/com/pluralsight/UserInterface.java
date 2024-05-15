@@ -111,8 +111,8 @@ private void displayVehicles(List<Vehicle> vehicles) {
     public void processGetByColorRequest() {
 
     }
-    public void processGetByMileageRequest() {
 
+    public void processGetByMileageRequest() {
 
     }
     public void processGetAllVehicleRequest(Dealership dealership) {

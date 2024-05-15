@@ -7,16 +7,14 @@ public class Dealership {
     private String name;
     private String address;
     private String phoneNumber;
-    private ArrayList<Vehicle> inventory;
+    private ArrayList<Vehicle> vehicles;
 
    public Dealership(String name, String address, String phoneNumber) {
        this.name = name;
        this.address = address;
        this.phoneNumber = phoneNumber;
-       this.inventory = new ArrayList<>();
-   }
-   public ArrayList<Vehicle>getInventory(){
-       return inventory;
+       this.vehicles = new ArrayList<>();
+
    }
 
     public String getName() {
@@ -44,7 +42,7 @@ public class Dealership {
     }
 
     public void addVehicle(Vehicle vehicle) {
-       inventory.add(vehicle);
+       vehicles.add(vehicle);
 
     }
     public void removeVehicle(){
