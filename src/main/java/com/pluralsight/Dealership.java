@@ -51,4 +51,8 @@ public class Dealership {
 
     }
 
+    public List<Vehicle> getAllVehicle() {
+
+        return null;
+    }
 }

@@ -89,6 +89,9 @@ private void displayVehicles(List<Vehicle> vehicles) {
         scanner.close();
     }
 
+    private void processGetAllVehicleRequest() {
+    }
+
     private void processGetByVehicleTye() {
     }
 
@@ -110,11 +113,13 @@ private void displayVehicles(List<Vehicle> vehicles) {
     }
     public void processGetByMileageRequest() {
 
-    }
-    public void processGeByVehicleRequest() {
 
     }
-    public void processGetAllVehicleRequest() {
+    public void processGetAllVehicleRequest(Dealership dealership) {
+        List<Vehicle> allVehicles = dealership.getAllVehicle();
+        System.out.println("All our Vehicles are listed below:");
+        displayVehicles(allVehicles);
+
 
     }
     public void processAddVehicleRequest() {
