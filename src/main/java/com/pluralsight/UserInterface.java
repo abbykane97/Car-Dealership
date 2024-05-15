@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -15,10 +16,15 @@ public class UserInterface {
         this.dealership = dealership;
     }
 
-    public void init() throws IOException {
+    private void init() throws IOException {
         DealershipFileManager fileManager = new DealershipFileManager();
         this.dealership = fileManager.getDealership();
 
+}
+private void displayVehicles(List<Vehicle> vehicles) {
+        for (Vehicle vehicle : vehicles) {
+            System.out.println(vehicle);
+        }
 }
 
     public void display() throws IOException {

@@ -74,7 +74,7 @@ public class Vehicle {
         this.price = price;
     }
 
-    public Vehicle(int vinNumber, int year, String mString model, String vehicleType, String color, int odometer, double price) {
+    public Vehicle(int vinNumber, int year, String model, String vehicleType, String color, int odometer, double price) {
 
     }
 
