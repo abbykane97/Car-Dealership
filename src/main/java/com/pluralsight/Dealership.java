@@ -69,4 +69,13 @@ public class Dealership {
 
     public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
     }
+
+    public List<Vehicle> getVehiclesByYear(int min, int max) {
+    }
+
+    public List<Vehicle> getVehiclesByColor(String color) {
+    }
+
+    public List<Vehicle> getVehiclesByType(String type) {
+    }
 }

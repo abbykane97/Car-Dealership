@@ -90,10 +90,12 @@ private void displayVehicles(List<Vehicle> vehicles) {
         scanner.close();
     }
 
-    private void processGetAllVehicleRequest() {
-    }
+    public void processGetByVehicleTye(Scanner scanner) {
+        System.out.println("Enter the Vehicle type");
+        String type = scanner.nextLine();
+        System.out.println("These are the available vehicles with that type: ");
+        displayVehicles(dealership.getVehiclesByType(type));
 
-    private void processGetByVehicleTye() {
     }
 
 
@@ -108,7 +110,7 @@ private void displayVehicles(List<Vehicle> vehicles) {
 
     }
 
-    public void processGetByMakeModelRequest() {
+    public void processGetByMakeModelRequest(Scanner scanner) {
         System.out.println("Enter the Vehicles make");
         String make = scanner.nextLine();
         System.out.println("Enter the Vehicles model");
@@ -118,25 +120,41 @@ private void displayVehicles(List<Vehicle> vehicles) {
 
     }
 
-    public void processGetByYearRequest() {
+    public void processGetByYearRequest(Scanner scanner) {
+        System.out.println("Enter the minimum year: ");
+        int min = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter the maximum year: ");
+        int max = Integer.parseInt(scanner.nextLine());
+        System.out.println("These are the vehicles within your range: ");
+        displayVehicles(dealership.getVehiclesByYear(min, max));
 
     }
 
-    public void processGetByColorRequest() {
+    public void processGetByColorRequest(Scanner scanner) {
+        System.out.println("Select color:");
+        String color = scanner.nextLine();
+        System.out.println("Here are the vehicles with the color you selected:");
+        displayVehicles(dealership.getVehiclesByColor(color));
 
     }
 
     public void processGetByMileageRequest() {
+        System.out.println("Enter minimum mileage:");
+        int min = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter maximum mileage: ");
+        int max = Integer.parseInt(scanner.nextLine());
+        System.out.println("These are the vehicles within that milage range: ");
+
 
     }
     public void processGetAllVehicleRequest(Dealership dealership) {
         List<Vehicle> allVehicles = dealership.getAllVehicle();
         System.out.println("All our Vehicles are listed below:");
         displayVehicles(allVehicles);
-
-
+        
     }
     public void processAddVehicleRequest() {
+
 
     }
     public void processRemoveVehicleRequest() {
