@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -20,6 +22,7 @@ public class UserInterface {
     private void init() throws IOException {
         DealershipFileManager fileManager = new DealershipFileManager();
         this.dealership = fileManager.getDealership();
+        this.scanner = new Scanner(System.in);
 
 }
 private void displayVehicles(List<Vehicle> vehicles) {
@@ -90,7 +93,7 @@ private void displayVehicles(List<Vehicle> vehicles) {
         scanner.close();
     }
 
-    public void processGetByVehicleTye(Scanner scanner) {
+    public void processGetByVehicleTye() {
         System.out.println("Enter the Vehicle type");
         String type = scanner.nextLine();
         System.out.println("These are the available vehicles with that type: ");
@@ -99,7 +102,7 @@ private void displayVehicles(List<Vehicle> vehicles) {
     }
 
 
-    public void processGetByPriceRequest(Scanner scanner) {
+    public void processGetByPriceRequest() {
         System.out.println("Enter minimum price");
         int min = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter maximum price");
@@ -110,7 +113,7 @@ private void displayVehicles(List<Vehicle> vehicles) {
 
     }
 
-    public void processGetByMakeModelRequest(Scanner scanner) {
+    public void processGetByMakeModelRequest() {
         System.out.println("Enter the Vehicles make");
         String make = scanner.nextLine();
         System.out.println("Enter the Vehicles model");
@@ -120,7 +123,7 @@ private void displayVehicles(List<Vehicle> vehicles) {
 
     }
 
-    public void processGetByYearRequest(Scanner scanner) {
+    public void processGetByYearRequest() {
         System.out.println("Enter the minimum year: ");
         int min = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter the maximum year: ");
@@ -130,7 +133,7 @@ private void displayVehicles(List<Vehicle> vehicles) {
 
     }
 
-    public void processGetByColorRequest(Scanner scanner) {
+    public void processGetByColorRequest() {
         System.out.println("Select color:");
         String color = scanner.nextLine();
         System.out.println("Here are the vehicles with the color you selected:");
@@ -147,17 +150,30 @@ private void displayVehicles(List<Vehicle> vehicles) {
 
 
     }
-    public void processGetAllVehicleRequest(Dealership dealership) {
+    public void processGetAllVehicleRequest() {
         List<Vehicle> allVehicles = dealership.getAllVehicle();
         System.out.println("All our Vehicles are listed below:");
         displayVehicles(allVehicles);
-        
+
     }
     public void processAddVehicleRequest() {
-
+        try {
+            BufferedWriter br = new BufferedWriter(new FileWriter(FILE_NAME));
+        } catch (IOException e) {
+            System.out.println("Error" + e.getMessage());
+        }
 
     }
     public void processRemoveVehicleRequest() {
+        System.out.println("Enter ID of vehicle you wish to remove:");
+        int vehicleID = Integer.parseInt(scanner.nextLine());
+
+        if(dealership.removeVehicle()) {
+            System.out.println("Vehicle was removed successfully!");
+        }
+        else{
+            System.out.println("Vehicle" + vehicleID + "was not found");
+        }
 
     }
 
