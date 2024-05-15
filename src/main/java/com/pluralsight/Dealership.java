@@ -18,7 +18,7 @@ public class Dealership {
    }
 
     public String getName() {
-        return null;
+        return name;
     }
 
     public void setName(String name) {
@@ -26,7 +26,7 @@ public class Dealership {
     }
 
     public String getAddress() {
-        return null;
+        return address;
     }
 
     public void setAddress(String address) {
@@ -34,17 +34,27 @@ public class Dealership {
     }
 
     public String getPhoneNumber() {
-        return null;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
+    public ArrayList<Vehicle> getVehicles() {
+       this.vehicles = vehicles;
+    }
+
+    public setVehicles(ArrayList<Vehicle> vehicles) {
+        this.vehicles = vehicles;
+    }
+
     public void addVehicle(Vehicle vehicle) {
        vehicles.add(vehicle);
-
     }
+
+
+
     public void removeVehicle(){
 
     }
@@ -52,5 +62,11 @@ public class Dealership {
     public List<Vehicle> getAllVehicle() {
 
         return null;
+    }
+
+    public List<Vehicle> getVehiclesByPrice(int min, int max) {
+    }
+
+    public List<Vehicle> getVehiclesByMakeModel(String make, String model) {
     }
 }

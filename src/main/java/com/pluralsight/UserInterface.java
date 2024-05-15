@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class UserInterface {
     public final String FILE_NAME = "dealership.csv";
     private Dealership dealership;
+    private Scanner scanner;
 
     public Dealership getDealership() {
         return dealership;
@@ -96,11 +97,24 @@ private void displayVehicles(List<Vehicle> vehicles) {
     }
 
 
-    public void processGetByPriceRequest() {
+    public void processGetByPriceRequest(Scanner scanner) {
+        System.out.println("Enter minimum price");
+        int min = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter maximum price");
+        int max = Integer.parseInt(scanner.nextLine());
+        System.out.println("Here are the vehicles within your price range:");
+        displayVehicles(dealership.getVehiclesByPrice(min, max));
+        
 
     }
 
     public void processGetByMakeModelRequest() {
+        System.out.println("Enter the Vehicles make");
+        String make = scanner.nextLine();
+        System.out.println("Enter the Vehicles model");
+        String model = scanner.nextLine();
+        System.out.println("Here are the vehicles with makes and models selected:");
+        displayVehicles(dealership.getVehiclesByMakeModel(make, model));
 
     }
 
