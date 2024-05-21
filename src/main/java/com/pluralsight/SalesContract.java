@@ -46,6 +46,12 @@ public class SalesContract extends Contract {
         this.finance = finance;
     }
 
+
+    @Override
+    public double getMonthlyPayment() {
+        return super.getMonthlyPayment();
+    }
+
     @Override
     public double getTotalPrice() {
 
