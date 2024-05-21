@@ -28,11 +28,18 @@ public abstract class LeaseContract extends Contract {
 
     @Override
     public double getTotalPrice() {
-        return super.getTotalPrice();
+        return (getVehicle().getPrice() - expectedEndingValue) + leaseFee;
+
     }
 
     @Override
-    public double getMonthlyPayment() {
-        return super.getMonthlyPayment();
+    public double getMonthlyPrice() {
+        int numberOfPayments = 36;
+        double interestRate = 4.0 / 1200;
+        double monthlyPayment = getTotalPrice() * (interestRate * Math.pow(1 + interestRate, numberOfPayments)) / (Math.pow(1 + interestRate, numberOfPayments) - 1);
+        monthlyPayment = Math.round(monthlyPayment * 100);
+        monthlyPayment /= 100;
+        return monthlyPayment;
     }
-}
+    }
+
