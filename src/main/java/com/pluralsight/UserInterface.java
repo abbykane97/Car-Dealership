@@ -7,10 +7,60 @@ public class UserInterface {
 
     private Dealership dealership;
     private Scanner scanner;
+    private DealershipFileManager contractFileManager;
 
     public UserInterface() {
         scanner = new Scanner(System.in);
+        dealership = new Dealership("Dealership Name", "Address", "Phone Number");
+        contractFileManager = new DealershipFileManager();
     }
+
+    public void processSale() {
+        System.out.println("Enter VIN of vehicle you wish to sell:");
+        int vin = Integer.parseInt(scanner.nextLine());
+        Vehicle vehicle = findVehicleByVin(vin);
+        if (vehicle == null) {
+            System.out.println("Vehicle not found");
+        }
+
+        System.out.println("Enter the sale date (YYYYMMDD):");
+        String date = scanner.nextLine();
+
+        System.out.println("Enter customer name:");
+        String customerName = scanner.nextLine();
+
+        System.out.println("Enter customer email:");
+        String customerEmail = scanner.nextLine();
+
+        dealership.addContract(salesContract);
+        contractFileManager.saveContract(salesContract);
+        dealership.removeVehicle(vehicle);
+
+    }
+
+    public void processLease() {
+        System.out.println("Enter VIN of vehicle you wish to lease:");
+        int vin = Integer.parseInt(scanner.nextLine());
+        Vehicle vehicle = findVehicleByVin(vin);
+        if (vehicle == null) {
+            System.out.println("Vehicle not found");
+        }
+
+        System.out.println("Enter the lease date (YYYYMMDD):");
+        String date = scanner.nextLine();
+
+        System.out.println("Enter customer name:");
+        String customerName = scanner.nextLine();
+
+        System.out.println("Enter customer email:");
+        String customerEmail = scanner.nextLine();
+
+        dealership.addContract(leaseContract);
+        contractFileManager.saveContract(leaseContract);
+        dealership.removeVehicle(vehicle);
+
+    }
+
 
     public void display() {
         init();
