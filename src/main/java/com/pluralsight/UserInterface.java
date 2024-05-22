@@ -208,6 +208,15 @@ public class UserInterface {
         DealershipFileManager manager = new DealershipFileManager();
         manager.saveDealership(dealership);
     }
+    private Vehicle findVehicleByVin(int vin) {
+        for (Vehicle vehicle : dealership.getAllVehicles()) {
+            if (vehicle.getVin() == vin) {
+                return vehicle;
+            }
+        }
+        return null;
+    }
+
 
     public void processRemoveVehicleRequest() {
         System.out.print("Enter the VIN of the vehicle you wish to remove: ");
