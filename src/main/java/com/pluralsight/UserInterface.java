@@ -13,7 +13,19 @@ public class UserInterface {
         scanner = new Scanner(System.in);
         dealership = new Dealership("Dealership Name", "Address", "Phone Number");
         contractFileManager = new DealershipFileManager();
+        SalesContract salesContract = new SalesContract() {
+
+
+            LeaseContract leaseContract = new LeaseContract() {
+
+            }
+
+
+
+        }
+
     }
+
 
     public void processSale() {
         System.out.println("Enter VIN of vehicle you wish to sell:");
@@ -76,6 +88,8 @@ public class UserInterface {
             System.out.println("7. Get all vehicles");
             System.out.println("8. Add vehicle");
             System.out.println("9. Remove vehicle");
+            System.out.println("10. Sell vehicle");
+            System.out.println("11. Lease a vehicle");
             System.out.println("99. Quit");
 
             System.out.print("Enter your choice: ");
@@ -108,6 +122,12 @@ public class UserInterface {
                     break;
                 case "9":
                     processRemoveVehicleRequest();
+                    break;
+                case "10":
+                    processSale();
+                    break;
+                case "11":
+                    processLease();
                     break;
                 case "99":
                     quit = true;
